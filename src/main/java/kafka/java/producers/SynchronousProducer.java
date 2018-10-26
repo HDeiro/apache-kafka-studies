@@ -1,6 +1,6 @@
 package kafka.java.producers;
 
-import kafka.java.producers.properties.BuilderProperties;
+import kafka.java.properties.BuilderProperties;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
