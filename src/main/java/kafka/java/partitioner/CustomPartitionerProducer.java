@@ -13,7 +13,7 @@ import org.apache.kafka.clients.producer.ProducerRecord;
  * When a partition is defined by a Descriptor "A", it'll be stored in the first 3 partitions (0 to 2). Otherwise, it'll
  * be stored in the other available partitions (3 to 9)
  */
-public class SpecificProducer {
+public class CustomPartitionerProducer {
     public static void main(String[] args) {
         String topic = "test";
         KafkaProducer<String, String> producer = new KafkaProducer(
