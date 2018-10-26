@@ -18,3 +18,9 @@ There are two ways to commit the receivement of a message.
     - Asynchronous Commit: Will send the request and continue processing. But the major drawback of the asynchronous commit is that it does not retry to fetch in case of a recoverable error. This behavior happens because of situations like the one were you processed 25 records and want to commit to the offset, but it fails. If you retry, maybe another batch has been processed and sent to the Kafka broker. So, the final commit offset won't be 50 as expected, but 25, causing message duplicity. 
 
 A commit can have great impact in the client application. So, it's necessary to choose the appropriate technique based on the use case.
+
+It's possible to use an approach that commits the current processed offset using a ConsumerRebalanceListener, that provides two event listeners:
+
+- onPartitionsRevoked: Called when a partition is revoked from a consumer.
+
+- onPartitionsAssigned: Calle d when a partition is assigned to a consumer.
