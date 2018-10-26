@@ -1,4 +1,4 @@
-package kafka.java.producers.properties;
+package kafka.java.properties;
 
 import java.util.Properties;
 
@@ -19,6 +19,11 @@ public class BuilderProperties {
 
     public BuilderProperties append(String key, String value) {
         this.properties.put(key, value);
+        return this;
+    }
+
+    public BuilderProperties remove(String key) {
+        this.properties.remove(key);
         return this;
     }
 }
