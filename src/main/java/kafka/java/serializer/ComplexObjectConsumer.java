@@ -25,7 +25,7 @@ public class ComplexObjectConsumer {
         Duration duration = Duration.of(100, ChronoUnit.MILLIS);
 
         while(true) {
-            ConsumerRecords<String, ComplexObject> records = consumer.poll(100);
+            ConsumerRecords<String, ComplexObject> records = consumer.poll(duration);
 
             records.forEach(record -> {
                 System.out.printf(
